@@ -3,7 +3,7 @@ import csv
 class MenadzerPolaczen:
   def __init__(self, filename):
     self.filenaCme = filename
-    self.data_dict = self.read_data()
+    self.data_dict = self.read_data('phoneCalls.csv')
 
   def read_data(self):
     calls_dict_sum = dict()
@@ -15,11 +15,11 @@ class MenadzerPolaczen:
         from_subsr = int(row[0])
         if from_subsr not in calls_dict_sum:
           calls_dict_sum[from_subsr] = 0
-        calls_dict_sum[from_subsr] += 1
+        calls_dict_sum[from_subsr].count
     return calls_dict_sum
 
   def pobierz_najczesciej_dzwoniacego(self):
-    return max(self.data_dict.items(), key= lambda x: x[1])
+    return max(self.data_dict_sum, key= lambda x: x[1])
 
 if __name__ == "__main__":
   nazwa_pliku = input()
