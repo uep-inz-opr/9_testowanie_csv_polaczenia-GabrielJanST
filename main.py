@@ -15,11 +15,11 @@ class MenadzerPolaczen:
         from_subsr = int(row[0])
         if from_subsr not in calls_dict_sum:
             calls_dict_sum[from_subsr] = 0
-            calls_dict_sum[from_subsr] += 1 
+        calls_dict_sum[from_subsr] += 1 
     return calls_dict_sum
 
   def pobierz_najczesciej_dzwoniacego(self):
-    return max(self.data_dict_sum, key= lambda x: x[1])
+    return max(self.data_dict.items(), key= lambda x: x[1])
 
 if __name__ == "__main__":
   nazwa_pliku = "phoneCalls.csv"
